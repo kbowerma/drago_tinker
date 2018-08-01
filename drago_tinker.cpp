@@ -108,23 +108,23 @@ void myHandler(const char *event, const char *data) {
 		if (strcmp(data,"on")==0 || strcmp(data,"11")==0) {
 			digitalWrite(LEFT_RELAY,HIGH);
 			digitalWrite(RIGHT_RELAY,HIGH);
-			Particle.publish("drago.state","11");
+			Particle.publish("log.drago.state","11",PRIVATE);
 		} else if (strcmp(data,"off")==0 || strcmp(data,"00")==0) {
 			digitalWrite(LEFT_RELAY,LOW);
 			digitalWrite(RIGHT_RELAY,LOW);
-			Particle.publish("drago.state","00");
+			Particle.publish("log.drago.state","00",PRIVATE);
 		} else if (strcmp(data,"left")==0 || strcmp(data,"10")==0) {
 			digitalWrite(LEFT_RELAY,HIGH);
 			digitalWrite(RIGHT_RELAY,LOW);
-			Particle.publish("drago.state","10");
+			Particle.publish("log.drago.state","10",PRIVATE);
 		} else if (strcmp(data,"right")==0 || strcmp(data,"01")==0) {
 			digitalWrite(LEFT_RELAY,LOW);
 			digitalWrite(RIGHT_RELAY,HIGH);
-			Particle.publish("drago.state","01");
-		} else if (strcmp(data,"")==0) {
+			Particle.publish("log.drago.state","01",PRIVATE);
+		} /* else if (strcmp(data,"")==0) {
 			String readstate = String(leftState);
 			readstate.concat(String(rightState));
-			Particle.publish("drago.state",readstate);
-		}
+			Particle.publish("drago.state",readstate,PRIVATE);
+		} */
 
 	}
