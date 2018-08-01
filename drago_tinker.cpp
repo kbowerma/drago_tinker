@@ -28,6 +28,7 @@ void setup()
 	Particle.function("analogwrite", tinkerAnalogWrite);
 
 	Particle.variable("sketch_name", SKETCHNAME);  //ktb 7.21.2015
+	Particle.variable("LAST_UPDATED", "1/30/18");
 	Particle.variable("LEFT_STATE", leftState);
 	Particle.variable("RIGHT_STATE", rightState);
 
